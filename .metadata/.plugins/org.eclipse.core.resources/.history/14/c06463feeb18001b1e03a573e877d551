@@ -1,0 +1,13 @@
+package Chapter13_2;
+
+public class Quiz1309 {
+
+	public static void main(String[] args) {
+		int[] arr = {210, 19, 72, 129, 34};
+		
+		}
+		
+		
+	}
+
+}

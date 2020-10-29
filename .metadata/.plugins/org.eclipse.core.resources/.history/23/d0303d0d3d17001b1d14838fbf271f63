@@ -1,0 +1,17 @@
+import java.util.Random;
+
+public class StaticEx2 {
+
+	public static void main(String[] args) {
+		static int num;
+		
+		// static 초기화 블록
+		static {
+			Random rand = new Random();
+			num = rand.nextInt(100);
+		}
+		System.out.println(num);
+
+	}
+
+}

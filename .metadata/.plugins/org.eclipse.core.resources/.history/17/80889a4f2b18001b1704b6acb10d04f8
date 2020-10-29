@@ -1,0 +1,23 @@
+
+import java.util.Scanner;
+import java.util.StringTokenizer;
+
+public class Quiz1301 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		int[] cal = new int[5];
+		
+		cal[0] = sc.nextInt();
+		cal[1] = sc.nextInt();
+		cal[2] = sc.nextInt();
+		cal[3] = sc.nextInt();
+		cal[4] = sc.nextInt();
+		
+		System.out.println("총 합은 " + (cal[0] + cal[1] + cal[2] + cal[3] + cal[4]));
+		
+		
+	}
+
+}

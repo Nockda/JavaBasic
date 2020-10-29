@@ -1,0 +1,30 @@
+//길이가 10인 배열을 선언하고 총 10개의 정수를 입력받아서 홀수와 짝수를
+//구분해서 출력하라.
+
+
+
+import java.util.Scanner;
+
+public class Quiz1302 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		int[] cal = new int[10];
+		
+		for(int i = 0; i <10; i++) {
+			cal[i] = sc.nextInt();
+			continue;
+			while(true) {
+				int divide = cal[i] % 2;
+				if(divide == 0) {
+					System.out.println("짝수는 "  + cal[i]);
+				}
+				else {
+					System.out.println("홀수는 " + cal[i]);
+				}
+				break;
+			}
+		}
+	}
+}

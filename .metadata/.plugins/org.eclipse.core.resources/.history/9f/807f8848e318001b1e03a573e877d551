@@ -1,0 +1,30 @@
+//가로가 9, 세로가 3인 int형 2차원 배열을 선언하여
+//구구단 중 2, 3, 4단을 저장한다.
+//출력을 하는 프로그램을 작성하라
+
+
+package Chapter13_2;
+
+public class Quiz1306 {
+
+	public static void main(String[] args) {
+		int[][] array = new int[9][2];
+		
+		int[] ar = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+		
+		//구구단
+		for(int i = 1; i < array[i].length; i++) {
+			for(int j =1; j < array[j].length; j++) {
+			}
+		}
+		
+		for(int i = 0; i < 9; i++) {
+			for(int j = 0; j < 2; j++) {
+				System.out.print(array[i][j]);
+			}
+			System.out.println();
+		}
+		
+	}
+
+}
