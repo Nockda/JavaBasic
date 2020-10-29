@@ -14,8 +14,6 @@ public class Quiz1308Ans {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		
-		String sKind = { "구분", "이순신", "강감찬", "을지문덕", "권율", "총점" };
-		
 		int[][] nScore = new int[4][4];
 		// 국어		nScore[0][0~3]
 		// 영어		nScore[1][0~3]
@@ -39,9 +37,6 @@ public class Quiz1308Ans {
 			nScore[3][i] = sc.nextInt();
 		}
 		
-		for(int i=0; i<6;i++) {
-			System.out.println(sKind[i] + "\t");
-		}
 		System.out.println();
 		
 		for(int i =0; i<nScore.length; i++) {
