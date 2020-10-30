@@ -1,0 +1,12 @@
+import java.util.Random;
+
+public class E3_RandomNumberGenerator {
+
+	public static void main(String[] args) {
+		Random rad = new Random();
+		
+		for(int i = 0; i <7; i++) {
+			System.out.print(rad.nextInt(10) + " ");
+		}
+	}
+}
