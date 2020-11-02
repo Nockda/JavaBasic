@@ -43,7 +43,7 @@ public class BaseballGame {
 				int[] ans1 = new int[1];
 				int[] ans2 = new int[1];
 				int[] ans3 = new int[1];
-				if() {
+
 					System.out.println();
 				}
 				break;
@@ -53,4 +53,3 @@ public class BaseballGame {
 		
 	}
 
-}
