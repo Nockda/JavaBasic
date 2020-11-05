@@ -8,7 +8,5 @@ public class A1_Write7ToFile {
 		OutputStream out = new FileOutputStream("data.dat");
 		out.write(65);
 		out.close();
-
 	}
-
 }

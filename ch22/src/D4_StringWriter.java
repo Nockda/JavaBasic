@@ -16,5 +16,4 @@ public class D4_StringWriter {
 			e.printStackTrace();
 		}
 	}
-
 }
