@@ -255,7 +255,7 @@
               </children>
             </children>
             <children xsi:type="basic:PartSashContainer" xmi:id="_us4NKxG5Eeu0zswKleVkUw" containerData="7833" selectedElement="_us4NLBG5Eeu0zswKleVkUw">
-              <children xsi:type="basic:PartSashContainer" xmi:id="_us4NLBG5Eeu0zswKleVkUw" containerData="9000" selectedElement="_us4NLRG5Eeu0zswKleVkUw" horizontal="true">
+              <children xsi:type="basic:PartSashContainer" xmi:id="_us4NLBG5Eeu0zswKleVkUw" containerData="5742" selectedElement="_us4NLRG5Eeu0zswKleVkUw" horizontal="true">
                 <children xsi:type="advanced:Placeholder" xmi:id="_us4NLRG5Eeu0zswKleVkUw" elementId="org.eclipse.ui.editorss" containerData="7500" ref="_IDsy0BG3EeujoKYzyfPlDw"/>
                 <children xsi:type="basic:PartSashContainer" xmi:id="_us4NLhG5Eeu0zswKleVkUw" visible="false" containerData="2500" selectedElement="_us4NLxG5Eeu0zswKleVkUw">
                   <children xsi:type="basic:PartStack" xmi:id="_us4NLxG5Eeu0zswKleVkUw" elementId="org.eclipse.mylyn.tasks.ui.views.tasksMStack" visible="false" containerData="5000" selectedElement="_us4NMBG5Eeu0zswKleVkUw">
@@ -292,7 +292,7 @@
                   </children>
                 </children>
               </children>
-              <children xsi:type="basic:PartStack" xmi:id="_us4NNhG5Eeu0zswKleVkUw" elementId="bottom" containerData="1000" selectedElement="_us4NOxG5Eeu0zswKleVkUw">
+              <children xsi:type="basic:PartStack" xmi:id="_us4NNhG5Eeu0zswKleVkUw" elementId="bottom" containerData="4258" selectedElement="_us4NOxG5Eeu0zswKleVkUw">
                 <tags>org.eclipse.e4.secondaryDataStack</tags>
                 <tags>Java</tags>
                 <tags>General</tags>
@@ -564,7 +564,7 @@
           <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
         </children>
         <children xsi:type="basic:Part" xmi:id="__z1HoCAKEeux5I8jDTlXiQ" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="MyPhoneBook.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;MyPhoneBook.java&quot; partName=&quot;MyPhoneBook.java&quot; title=&quot;MyPhoneBook.java&quot; tooltip=&quot;PhoneBook/src/step09/MyPhoneBook.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/PhoneBook/src/step09/MyPhoneBook.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;758&quot; selectionTopPixel=&quot;0&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;MyPhoneBook.java&quot; partName=&quot;MyPhoneBook.java&quot; title=&quot;MyPhoneBook.java&quot; tooltip=&quot;PhoneBook/src/step09/MyPhoneBook.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/PhoneBook/src/step09/MyPhoneBook.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;2392&quot; selectionTopPixel=&quot;1977&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>removeOnHide</tags>
           <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
@@ -908,7 +908,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_H76v0hG3EeujoKYzyfPlDw" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_4Yb-0B_jEeux5I8jDTlXiQ" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_HpqkehG3EeujoKYzyfPlDw"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_MNm10CANEeuOfKWx20i8hQ" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_HpqkehG3EeujoKYzyfPlDw"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_H76v0xG3EeujoKYzyfPlDw" elementId="group.edit" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -948,7 +948,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_H76v2hG3EeujoKYzyfPlDw" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_4YebEB_jEeux5I8jDTlXiQ" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_HpqkIRG3EeujoKYzyfPlDw"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_MNpSECANEeuOfKWx20i8hQ" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_HpqkIRG3EeujoKYzyfPlDw"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_H76v2xG3EeujoKYzyfPlDw" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -3533,7 +3533,7 @@
   <addons xmi:id="_HpEFVxG3EeujoKYzyfPlDw" elementId="MinMax Addon" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.minmax.MinMaxAddon"/>
   <addons xmi:id="_HpEFWBG3EeujoKYzyfPlDw" elementId="org.eclipse.ui.workbench.addon.0" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.HandlerProcessingAddon"/>
   <addons xmi:id="_HpN2QBG3EeujoKYzyfPlDw" elementId="SplitterAddon" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.splitteraddon.SplitterAddon"/>
-  <addons xmi:id="_39FfkR_jEeux5I8jDTlXiQ" elementId="org.eclipse.ui.ide.addon.0" contributionURI="bundleclass://org.eclipse.ui.ide/org.eclipse.ui.internal.ide.addons.SaveAllDirtyPartsAddon"/>
+  <addons xmi:id="_IYS0IKimEeS11vbz3f9ezw" elementId="org.eclipse.ui.ide.addon.0" contributorURI="platform:/plugin/org.eclipse.ui.ide" contributionURI="bundleclass://org.eclipse.ui.ide/org.eclipse.ui.internal.ide.addons.SaveAllDirtyPartsAddon"/>
   <addons xmi:id="_dz0JgGOlEeSMMaPQU2nlzw" elementId="org.eclipse.ui.ide.application.addon.0" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.ui.ide.application/org.eclipse.ui.internal.ide.application.addons.ModelCleanupAddon"/>
   <categories xmi:id="_HpgxMBG3EeujoKYzyfPlDw" elementId="org.eclipse.ui.category.edit" name="Edit"/>
   <categories xmi:id="_HpgxMRG3EeujoKYzyfPlDw" elementId="org.eclipse.mylyn.wikitext.ui.editor.category" name="WikiText Markup Editing Commands" description="commands for editing lightweight markup"/>
