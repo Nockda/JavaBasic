@@ -1,3 +1,4 @@
+package complete1120;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -9,14 +10,6 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class AndongLibrary {
-
-	Connection con;
-	PreparedStatement pstmt1;
-	PreparedStatement pstmt2;
-	PreparedStatement pstmt3;
-	PreparedStatement pstmt4;
-	PreparedStatement pstmt5;
-	Scanner sc = new Scanner(System.in);
 	
 	static {
 		try {
@@ -26,6 +19,13 @@ public class AndongLibrary {
 		}
 	}
 	
+	Connection con;
+	PreparedStatement pstmt1;
+	PreparedStatement pstmt2;
+	PreparedStatement pstmt3;
+	PreparedStatement pstmt4;
+	PreparedStatement pstmt5;
+	Scanner sc = new Scanner(System.in);
 	
 	public static void main(String[] args) {
 		AndongLibrary mpb = new AndongLibrary();
@@ -107,9 +107,6 @@ public class AndongLibrary {
 		case 5:
 			delBook();
 			break;
-		case 6:
-			searchBook();
-			break;
 		default:
 			System.out.println("잘 못 입력하셨습니다.");
 			break;
@@ -135,9 +132,6 @@ public class AndongLibrary {
 			break;
 		case 5:
 			inquireOverdue();
-			break;
-		case 6:
-			black();
 			break;
 		default:
 			System.out.println("잘 못 입력하셨습니다.");
@@ -170,10 +164,8 @@ public class AndongLibrary {
 				+ "\n[도서관련]\n"
 				+ "1.<< 뒤로가기\n"
 				+ "2.신규도서등록\n"
-				+ "3.도서조회\n"
-				+ "4.배가상태변경\n"
-				+ "5.도서폐기\n"
-				+ "6.제목으로 검색\n"
+				+ "3.배가상태변경\n"
+				+ "4.도서폐기\n"
 				+ "선택 : ");
 	}
 	
@@ -184,8 +176,7 @@ public class AndongLibrary {
 				+ "2.도서대출\n"
 				+ "3.도서반납\n"
 				+ "4.도서조회\n"
-				+ "5.책 연체조회\n"
-				+ "6.사용자 연체조회\n"
+				+ "5.연체조회\n"
 				+ "선택 : ");
 	}
 	
@@ -364,9 +355,8 @@ public class AndongLibrary {
 		String bookId = sc.nextLine();
 		System.out.print("대여자 ID : ");
 		String id = sc.nextLine();
-		
-		
-		
+			
+			
 			String sql = "select count(*) from Status where 대여자아이디 = ?";
 			try {
 				pstmt2 = con.prepareStatement(sql);
@@ -484,45 +474,22 @@ public class AndongLibrary {
 		}
 	}
 	
-
-	public void black() {
-//		System.out.print("대여자 ID : ");
-//		String id = sc.nextLine();
-//		try {
-//			pstmt2 = con.prepareStatement(sql);
-//			pstmt2.setString(1, bId);
-//			ResultSet rs = pstmt2.executeQuery();
-//		}
-//		
-//		String sql = "select 대여기간 from Status where 대여자아이디 = ?";
-//		
-//		String stmt.executeQuery(sb.toString());
-//		System.out.println();
-	}
 	
-	public void searchBook() {
-		System.out.print("\n조회 할 키워드 : ");
-		String name = sc.nextLine();
+	public void countBook() {
+		System.out.print("\n조회 할 사람 id는 : ");
+		String cId = sc.nextLine();
 		
-		String sql = "select * from booklist where 도서명 like ?";
+		String sql = "select count(*) from Status where 대여자아이디 = ?";
 		try {
 			pstmt2 = con.prepareStatement(sql);
-			pstmt2.setString(1, '%'+name+'%');
+			pstmt2.setString(1, cId);
 			ResultSet rs = pstmt2.executeQuery();
+			int count = Integer.parseInt(rs.toString());
 			System.out.println("==================================================");
-			if(rs.next()) {
-				System.out.println("조회하신 [" + rs.getString(3) + "]의 정보는 아래와 같습니다.\n");
-				System.out.println("등록번호 : " + rs.getString(1));
-				System.out.println("배가상태 : " + rs.getString(2));
-				System.out.println("도서명 : " + rs.getString(3));
-				System.out.println("저작자 : " + rs.getString(4));
-				System.out.println("발행자 : " + rs.getString(5));
-				System.out.println("발행년 : " + rs.getString(6));
-				System.out.println("가격 : " + rs.getString(7));
-				System.out.println("입고날짜 : " + rs.getString(8));
-				System.out.println();
+			if(count>3) {
+				
 			}else {
-				System.out.println("조회하신 이름의 데이터가 없습니다.");
+				
 			}
 			rs.close();
 		} catch (Exception e) {
@@ -530,5 +497,4 @@ public class AndongLibrary {
 			System.out.println("알수없는 에러가 났습니다.");
 		}
 	}
-
 }
