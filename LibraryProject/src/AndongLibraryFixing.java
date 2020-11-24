@@ -2,13 +2,20 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.SQLIntegrityConstraintViolationException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.InputMismatchException;
+import java.util.Map;
 import java.util.Scanner;
 
-public class AndongLibrary {
+
+public class AndongLibraryFixing {
 
 	Connection con;
 	PreparedStatement pstmt1;
@@ -28,7 +35,7 @@ public class AndongLibrary {
 	
 	
 	public static void main(String[] args) {
-		AndongLibrary mpb = new AndongLibrary();
+		AndongLibraryFixing mpb = new AndongLibraryFixing();
 		mpb.doRun();
 	}
 	
@@ -55,6 +62,10 @@ public class AndongLibrary {
 				subMenu3();
 				break;
 			case 4:
+				showMenu5();
+				subMenu4();
+				break;
+			case 5:
 				end();
 				return;
 			default :
@@ -70,7 +81,6 @@ public class AndongLibrary {
 		String less = sc.nextLine();
 		switch(choice) {
 		case 1:
-			showMenu1();
 			return;
 		case 2:
 			addClient();
@@ -93,7 +103,6 @@ public class AndongLibrary {
 		String less = sc.nextLine();
 		switch(choice) {
 		case 1:
-			showMenu1();
 			return;
 		case 2:
 			addBook();
@@ -122,7 +131,6 @@ public class AndongLibrary {
 		String less = sc.nextLine();
 		switch(choice) {
 		case 1:
-			showMenu1();
 			return;
 		case 2:
 			borrowBook();
@@ -145,48 +153,106 @@ public class AndongLibrary {
 		}
 	}
 	
+	public void subMenu4() {				//지표관련서브메뉴
+		int choice;
+		choice = sc.nextInt();
+		String less = sc.nextLine();
+		switch(choice) {
+		case 1:
+			return;
+		case 2:
+			newBook();
+			break;
+		case 3:
+			bestSeller();
+			break;
+		case 4:
+			mostReader();
+			break;
+		case 5:
+			rentalDays();
+			break;
+		case 6:
+			countBook();
+			break;
+		case 7:
+			bookYear();
+			break;
+		case 8:
+			bookPrice();
+			break;
+		case 9:
+			bookYearPrice();
+			break;
+		default:
+			System.out.println("잘 못 입력하셨습니다.");
+			break;
+		}
+	}
+	
 	public void showMenu1() {
-		System.out.println("====================================================="
-				+ "\n[메뉴선택]\n"
-				+ "1.회원 관련\n"
-				+ "2.도서 관련\n"
-				+ "3.대출 관련\n"
-				+ "4.종료\n"
+		System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓\n"
+				+ "┃안동 스마트 도서관에 오신 것을 환영합니다.┃\n"
+				+ "┃   Andong Smart Library - Librarian Mode  ┃\n"
+				+ "┠━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫\n"
+				+ "┃		[메뉴선택]		   ┃\n"
+				+ "┃		1.회원 정보		   ┃\n"
+				+ "┃		2.도서 관련	   	   ┃\n"
+				+ "┃		3.대출 관련		   ┃\n"
+				+ "┃		4.지표 통계 조회	   ┃\n"
+				+ "┃		5.종료			   ┃\n"
+				+ "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\n"
+				+ "				     v.1.01\n"
 				+ "선택 : ");
 	}
 	
 	public void showMenu2() {
-		System.out.println("====================================================="
-				+ "\n[회원관련]\n"
-				+ "1.<< 뒤로가기\n"
-				+ "2.신규회원가입\n"
-				+ "3.회원정보조회\n"
-				+ "4.회원탈퇴\n"
-				+ "선택 : ");
+		System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺"
+				+ "\n[회원정보]\n\n"
+				+ "1. << 뒤로가기\n\n"
+				+ "2. 신규회원가입\n\n"
+				+ "3. 회원정보조회\n\n"
+				+ "4. 회원탈퇴\n\n\n"
+				+ "선택 : \n\n\n");
 	}
 	
 	public void showMenu3() {
-		System.out.println("====================================================="
-				+ "\n[도서관련]\n"
-				+ "1.<< 뒤로가기\n"
-				+ "2.신규도서등록\n"
-				+ "3.도서조회\n"
-				+ "4.배가상태변경\n"
-				+ "5.도서폐기\n"
-				+ "6.제목으로 검색\n"
-				+ "선택 : ");
+		System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n====================================================="
+				+ "\n[도서관련]\n\n"
+				+ "1. << 뒤로가기\n\n"
+				+ "2. 신규도서등록\n\n"
+				+ "3. 도서조회\n\n"
+				+ "4. 배가상태변경\n\n"
+				+ "5. 도서폐기\n\n"
+				+ "6. 제목으로 검색\n\n"
+				+ "선택 : \n\n\n");
 	}
 	
 	public void showMenu4() {
-		System.out.println("====================================================="
-				+ "\n[대출관련]\n"
+		System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n====================================================="
+				+ "\n[대출관련]\n\n"
+				+ "1. << 뒤로가기\n\n"
+				+ "2. 도서대출\n\n"
+				+ "3. 도서반납\n\n"
+				+ "4. 도서조회\n\n"
+				+ "5. 책 연체조회\n\n"
+				+ "6. 사용자 연체조회\n\n"
+				+ "선택 : \n\n\n");
+	}
+	
+	public void showMenu5() {
+		System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓"
+				+ "\n[통계관련]\n"
 				+ "1.<< 뒤로가기\n"
-				+ "2.도서대출\n"
-				+ "3.도서반납\n"
-				+ "4.도서조회\n"
-				+ "5.책 연체조회\n"
-				+ "6.사용자 연체조회\n"
-				+ "선택 : ");
+				+ "2.이번달 신작 리스트\n"
+				+ "3.베스트 셀러 순위\n"
+				+ "4.이달의 독서왕\n"
+				+ "5. 전체 이용자 평균대여기간\n"
+				+ "6. 월별 도서 입고 추이\n"
+				+ "7. 발행 년도별 도서수\n"
+				+ "8. 도서 평균 가격\n"
+				+ "9. 연도별 도서평균 가격\n"
+				+ "선택 : \n\n\n");
 	}
 	
 	public void addClient() {
@@ -297,6 +363,8 @@ public class AndongLibrary {
 		String bookName = sc.nextLine();
 		System.out.print("저작자 : ");
 		String author = sc.nextLine();
+		System.out.print("발행자 : ");
+		String issueCom = sc.nextLine();
 		System.out.print("발행년 : ");
 		String issueYear = sc.nextLine();
 		System.out.print("가격 : ");
@@ -304,7 +372,7 @@ public class AndongLibrary {
 		System.out.print("입고날짜 : ");
 		String arraivalDate = sc.nextLine();
 		
-		String sql = "insert into List values(?, ?, ?, ?, ?, ?, ?)";
+		String sql = "insert into BookList values(?, ?, ?, ?, ?, ?, ?, ?, BOOK_SEQ.nextval)";
 		
 		try {
 			pstmt1 = con.prepareStatement(sql);
@@ -312,9 +380,10 @@ public class AndongLibrary {
 			pstmt1.setString(2, location);
 			pstmt1.setString(3, bookName);
 			pstmt1.setString(4, author);
-			pstmt1.setString(5, issueYear);
-			pstmt1.setString(6, bookPrice);
-			pstmt1.setString(7, arraivalDate);
+			pstmt1.setString(5, issueCom);
+			pstmt1.setString(6, issueYear);
+			pstmt1.setString(7, bookPrice);
+			pstmt1.setString(8, arraivalDate);
 			pstmt1.executeUpdate();
 			System.out.println("데이터베이스에 " + bookName + "의 데이터가 추가되었습니다.");
 		} catch (Exception e) {
@@ -324,24 +393,77 @@ public class AndongLibrary {
 	}
 	
 	public void changeBookStatus() {
-		System.out.print("상태값 종류 : 관외대출자료, 분실자료, 비치자료, 재정리자료");
-		System.out.print("등록번호 : ");
+		
+		System.out.println("등록번호 : ");
 		String bookId = sc.nextLine();
-		System.out.print("배가상태 : ");
-		String location = sc.nextLine();
+		System.out.println("상태값 종류 :\n"
+				+ "1. 관외대출자료\n"
+				+ "2. 분실자료\n"
+				+ "3. 비치자료\n"
+				+ "4. 재정리자료\n");
+		System.out.println("배가상태 : ");
+		int choice = sc.nextInt();
 		
-		String sql = "update booklist set 배가상태 = ? where 등록번호 = ?";
-		
-		try {
-			pstmt1 = con.prepareStatement(sql);
-			pstmt1.setString(1, bookId);
-			pstmt1.setString(2, location);
-			pstmt1.executeUpdate();
-			System.out.println(bookId + "가 " + location + "으로 상태가 변경되었습니다.");
-		} catch (Exception e) {
-			System.out.println("입력 에러입니다.");
-			e.printStackTrace();
+		if(choice == 1) {
+			String status = "관외대출자료";
+			String sql = "update booklist set 배가상태 = ? where 등록번호 = ?";
+			
+			try {
+				pstmt1 = con.prepareStatement(sql);
+				pstmt1.setString(1, status);
+				pstmt1.setString(2, bookId);
+				pstmt1.executeUpdate();
+				System.out.println("데이터베이스에 " + bookId + "의 데이터가 수정되었습니다.");
+			} catch (Exception e) {
+				System.out.println("입력 에러입니다.");
+				e.printStackTrace();
+			}
+		} else if(choice == 2) {
+			String status = "분실자료";
+			String sql = "update booklist set 배가상태 = ? where 등록번호 = ?";
+			
+			try {
+				pstmt1 = con.prepareStatement(sql);
+				pstmt1.setString(1, status);
+				pstmt1.setString(2, bookId);
+				pstmt1.executeUpdate();
+				System.out.println("데이터베이스에 " + bookId + "의 데이터가 수정되었습니다.");
+			} catch (Exception e) {
+				System.out.println("입력 에러입니다.");
+				e.printStackTrace();
+			}
+		} else if(choice == 3) {
+			String status = "비치자료";
+			String sql = "update booklist set 배가상태 = ? where 등록번호 = ?";
+			
+			try {
+				pstmt1 = con.prepareStatement(sql);
+				pstmt1.setString(1, status);
+				pstmt1.setString(2, bookId);
+				pstmt1.executeUpdate();
+				System.out.println("데이터베이스에 " + bookId + "의 데이터가 수정되었습니다.");
+			} catch (Exception e) {
+				System.out.println("입력 에러입니다.");
+				e.printStackTrace();
+			}
+		} else if(choice == 4) {
+			String status = "재정리자료";
+			String sql = "update booklist set 배가상태 = ? where 등록번호 = ?";
+			
+			try {
+				pstmt1 = con.prepareStatement(sql);
+				pstmt1.setString(1, status);
+				pstmt1.setString(2, bookId);
+				pstmt1.executeUpdate();
+				System.out.println("데이터베이스에 " + bookId + "의 데이터가 수정되었습니다.");
+			} catch (Exception e) {
+				System.out.println("입력 에러입니다.");
+				e.printStackTrace();
+			}
 		}
+		
+
+		
 	}
 	
 	public void delBook() {
@@ -483,22 +605,7 @@ public class AndongLibrary {
 			System.out.println("알수없는 에러가 났습니다.");
 		}
 	}
-	
 
-	public void black() {
-//		System.out.print("대여자 ID : ");
-//		String id = sc.nextLine();
-//		try {
-//			pstmt2 = con.prepareStatement(sql);
-//			pstmt2.setString(1, bId);
-//			ResultSet rs = pstmt2.executeQuery();
-//		}
-//		
-//		String sql = "select 대여기간 from Status where 대여자아이디 = ?";
-//		
-//		String stmt.executeQuery(sb.toString());
-//		System.out.println();
-	}
 	
 	public void searchBook() {
 		System.out.print("\n조회 할 키워드 : ");
@@ -529,6 +636,142 @@ public class AndongLibrary {
 			e.printStackTrace();
 			System.out.println("알수없는 에러가 났습니다.");
 		}
+	}
+	
+	public void black () {
+		boolean black2;
+		System.out.print("\n조회 할 아이디 : ");
+		String clientId = sc.nextLine();
+		Date date = new Date();
+		
+		String sql = "select 반납날짜 + (대여기간-7) from status where 대여자아이디 = ?";
+		try {
+			pstmt2 = con.prepareStatement(sql);
+			pstmt2.setString(1, clientId);
+			ResultSet rs = pstmt2.executeQuery();
+			if(rs.next()) {
+				Date checkdate = rs.getTimestamp(1);
+				System.out.println(checkdate);
+//				if(checkdate - date) {
+//					black = true;
+//				} else {
+//					black = false;
+//				}
+			}else {
+				System.out.println("조회하신 이름의 데이터가 없습니다.");
+			}
+			rs.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("알수없는 에러가 났습니다.");
+		}
+	
+	}
+	
+	public void newBook() {
+		
+		try {
+			Statement stmt = con.createStatement();
+			Date date = new Date();
+			SimpleDateFormat format1 = new SimpleDateFormat("yyyy/MM");
+			String time1 = format1.format(date);
+			
+			StringBuffer sb2 = new StringBuffer();
+			sb2.append("select count(도서명) from booklist where to_char(입고날짜,'yyyy/MM') = '"+time1+"'");
+			ResultSet rs2 = stmt.executeQuery(sb2.toString());
+			int num = 0;
+			
+			if(rs2.next()) {
+				num = rs2.getInt(1);
+			}
+			
+			System.out.println("[ 이번달에 새로 입고 된 신작 ]");
+			StringBuffer sb = new StringBuffer();
+			sb.append("select 도서명 from booklist where to_char(입고날짜,'yyyy/MM') = '"+time1+"'");
+			ResultSet rs = stmt.executeQuery(sb.toString());
+			
+//			if(rs.next()) {
+//				System.out.println(rs.getString(1));
+//			}else {
+//				System.out.println("이번달 신작이 없습니다.");
+//			}
+			
+			ResultSetMetaData md = rs.getMetaData();
+			int columns = md.getColumnCount();
+			ArrayList<HashMap<String,Object>> list = new ArrayList<HashMap<String,Object>>();
+			 
+			while(rs.next()) {
+				HashMap<String,Object> row = new HashMap<String, Object>(columns);
+				for(int i=1; i<=columns; ++i) {
+					row.put(md.getColumnName(i), rs.getObject(i));
+				}
+				list.add(row);
+			}
+			
+			rs.close();
+		}catch (Exception e) {
+		e.printStackTrace();
+		System.out.println("알수없는 에러가 났습니다.");
+		}
+	}
+
+	public void bestSeller() {
+		
+		try{
+		Statement stmt = con.createStatement();
+
+		Date date = new Date();
+		SimpleDateFormat format1 = new SimpleDateFormat("yyyy/MM");
+		String time1 = format1.format(date);
+
+		System.out.println("[ 이번달 베스트 셀러 ]");
+		StringBuffer sb = new StringBuffer();
+		
+		sb.append("select a.도서등록번호, b.도서명 from( select 도서등록번호, count(도서등록번호) from status where to_char(대여날짜,'yyyy/MM') = '" + time1 + "' group by 도서등록번호 order by count(도서등록번호) desc) a, booklist b where rownum <10 and a.도서등록번호 = b.등록번호");
+		ResultSet rs = stmt.executeQuery(sb.toString());
+		
+		ResultSetMetaData md = rs.getMetaData();
+		int columns = md.getColumnCount();
+		ArrayList<HashMap<String,Object>> list = new ArrayList<HashMap<String,Object>>();
+		 
+		while(rs.next()) {
+			HashMap<String,Object> row = new HashMap<String, Object>(columns);
+			for(int i=1; i<=columns; ++i) {
+				row.put(md.getColumnName(i), rs.getObject(i));
+				System.out.println(i + "위 : " + rs.getObject(i));
+			}
+			list.add(row);
+		}
+		
+		rs.close();
+		}catch (Exception e) {
+		e.printStackTrace();
+		System.out.println("알수없는 에러가 났습니다.");
+		}
+	}
+	
+	public void mostReader() {
+		
+	}
+	
+	public void rentalDays() {
+		
+	}
+	
+	public void countBook() {
+		
+	}
+	
+	public void bookYear() {
+		
+	}
+
+	public void bookPrice() {
+		
+	}
+	
+	public void bookYearPrice() {
+		
 	}
 
 }
