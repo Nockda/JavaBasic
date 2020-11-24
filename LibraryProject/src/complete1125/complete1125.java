@@ -1,3 +1,4 @@
+package complete1125;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -14,7 +15,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 
-public class AndongLibraryFixing {
+public class complete1125 {
 
 	Connection con;
 	PreparedStatement pstmt1;
@@ -34,7 +35,7 @@ public class AndongLibraryFixing {
 	
 	
 	public static void main(String[] args) {
-		AndongLibraryFixing mpb = new AndongLibraryFixing();
+		complete1125 mpb = new complete1125();
 		mpb.doRun();
 	}
 	
@@ -172,7 +173,7 @@ public class AndongLibraryFixing {
 			rentalDays();
 			break;
 		case 6:
-			monthInput();
+			countBook();
 			break;
 		case 7:
 			bookYear();
@@ -180,13 +181,16 @@ public class AndongLibraryFixing {
 		case 8:
 			bookPrice();
 			break;
+		case 9:
+			bookYearPrice();
+			break;
 		default:
 			System.out.println("잘 못 입력하셨습니다.");
 			break;
 		}
 	}
 	
-	public void showMenu1() {				// 메인 메뉴
+	public void showMenu1() {
 		
 		String sql = "commit";
 		
@@ -213,7 +217,7 @@ public class AndongLibraryFixing {
 				+ "\t선택 : \n\n");
 	}
 	
-	public void showMenu2() {				// 회원정보 메뉴
+	public void showMenu2() {
 		System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\t\t============================"
 				+ "\n\t\t=========[회원정보]=========\n\t\t============================\n\n"
 				+ "\t\t     1. << 뒤로가기\n\n"
@@ -223,7 +227,7 @@ public class AndongLibraryFixing {
 				+ "\t\t     선택 : \n\n");
 	}
 	
-	public void showMenu3() {				// 도서관련 메뉴
+	public void showMenu3() {
 		System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\t\t============================"
 				+ "\n\t\t=========[도서관련]=========\n\t\t============================\n\n"
 				+ "\t\t     1. << 뒤로가기\n\n"
@@ -235,7 +239,7 @@ public class AndongLibraryFixing {
 				+ "\t\t     선택 : \n\n\n");
 	}
 	
-	public void showMenu4() {				// 대출관련 메뉴
+	public void showMenu4() {
 		System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\t\t============================"
 				+ "\n\t\t=========[대출관련]=========\n\t\t============================\n\n"
 				+ "\t\t     1. << 뒤로가기\n\n"
@@ -247,7 +251,7 @@ public class AndongLibraryFixing {
 				+ "\t\t     선택 : \n\n\n");
 	}
 	
-	public void showMenu5() {				// 지표관련 메뉴
+	public void showMenu5() {
 		System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\t\t============================"
 				+ "\n\t\t=========[지표조회]=========\n\t\t============================\n\n"
 				+ "\t\t 1. << 뒤로가기\n"
@@ -257,11 +261,12 @@ public class AndongLibraryFixing {
 				+ "\t\t 5. 전체 이용자 평균대여기간\n"
 				+ "\t\t 6. 월별 도서 입고 추이\n"
 				+ "\t\t 7. 발행 년도별 도서수\n"
-				+ "\t\t 8. 도서 평균 가격 가격\n\n\t\t============================\n"
+				+ "\t\t 8. 도서 평균 가격\n"
+				+ "\t\t 9. 연도별 도서평균 가격\n\n\t\t============================\n"
 				+ "\t\t 선택 : \n\n\n");
 	}
 	
-	public void addClient() {				// 회원가입
+	public void addClient() {
 		System.out.print("아이디 : ");
 		String id = sc.nextLine();
 		System.out.print("이름 : ");
@@ -862,229 +867,20 @@ public class AndongLibraryFixing {
 		
 	}
 	
-	public void monthInput() {
+	public void countBook() {
 		
 	}
 	
 	public void bookYear() {
-
 		
-		System.out.println("\n\n\n\t < 발행년별 보유 도서 수 >");
-		try{
-			
-			Statement stmt = con.createStatement();
-			StringBuffer sb = new StringBuffer();
-			
-			sb.append("select count(도서명) from booklist where 발행년 < 2021 and 발행년 > 2010");
-			ResultSet rs = stmt.executeQuery(sb.toString());
-			while(rs.next()) {
-				System.out.println("\n\t 2010년대 도서보유권수(2010~2020) : " + rs.getString(1) + "권");
-			}
-			
-			rs.close();
-		}catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-		try {
-			Statement stmt = con.createStatement();
-			StringBuffer sb = new StringBuffer();
-			
-			sb.append("select count(도서명) from booklist where 발행년 < 2011 and 발행년 > 2000");
-			ResultSet rs = stmt.executeQuery(sb.toString());
-			while(rs.next()) {
-				System.out.println("\t 2000년대 도서보유권수(2000~2010) : " + rs.getString(1) + "권");
-			}
-		rs.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		try {
-			Statement stmt = con.createStatement();
-			StringBuffer sb = new StringBuffer();
-			
-			
-			sb.append("select count(도서명) from booklist where 발행년 < 2001 and 발행년 >1990");
-			ResultSet rs = stmt.executeQuery(sb.toString());
-			while(rs.next()) {
-				System.out.println("\t 1990년대 도서보유권수(1990~2000) : " + rs.getString(1) + "권");
-			}
-			rs.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-			
-		try {
-			Statement stmt = con.createStatement();
-			StringBuffer sb = new StringBuffer();
-			
-			sb.append("select count(도서명) from booklist where 발행년 < 1991 and 발행년 >1980");
-			ResultSet rs = stmt.executeQuery(sb.toString());
-			while(rs.next()) {
-				System.out.println("\t 1980년대 도서보유권수(1980~1990) : " + rs.getString(1) + "권");
-			}
-			rs.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-			
-		try {
-			Statement stmt = con.createStatement();
-			StringBuffer sb = new StringBuffer();
-			
-			sb.append("select count(도서명) from booklist where 발행년 < 1981 and 발행년 >1970");
-			ResultSet rs = stmt.executeQuery(sb.toString());
-			while(rs.next()) {
-				System.out.println("\t 1970년대 도서보유권수(1970~1980) : " + rs.getString(1) + "권");
-			}rs.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-		try {
-			Statement stmt = con.createStatement();
-			StringBuffer sb = new StringBuffer();
-			
-			sb.append("select count(도서명) from booklist where 발행년 < 1971");
-			ResultSet rs = stmt.executeQuery(sb.toString());
-			while(rs.next()) {
-				System.out.println("\t 1970년대 이전 도서보유권수(~1970) : " + rs.getString(1) + "권");
-			}
-			rs.close();
-		}
-		catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-		try {
-			Statement stmt = con.createStatement();
-			StringBuffer sb = new StringBuffer();
-			
-			sb.append("select count(도서명) from booklist");
-			ResultSet rs = stmt.executeQuery(sb.toString());
-			while(rs.next()) {
-				System.out.println("\t 안동 스마트 도서관 전체 보유 권수 : " + rs.getString(1) + "권");
-			}
-			rs.close();
-		}
-		catch (Exception e) {
-			e.printStackTrace();
-		}
 	}
 
 	public void bookPrice() {
-
 		
-		System.out.println("\n\n\n\t < 시대별 도서 가격 변동 추이 >");
-		try{
-			
-			Statement stmt = con.createStatement();
-			StringBuffer sb = new StringBuffer();
-			
-			sb.append("select round(avg(가격)) from booklist where 발행년 < 2021 and 발행년 > 2010");
-			ResultSet rs = stmt.executeQuery(sb.toString());
-			while(rs.next()) {
-				System.out.println("\n\t 2010년대 도서가격(2010~2020) : " + rs.getString(1) + "원");
-			}
-			
-			rs.close();
-		}catch (Exception e) {
-			e.printStackTrace();
-			System.out.println("알수없는 에러가 났습니다.");
-		}
+	}
+	
+	public void bookYearPrice() {
 		
-		try {
-			Statement stmt = con.createStatement();
-			StringBuffer sb = new StringBuffer();
-			
-			sb.append("select round(avg(가격)) from booklist where 발행년 < 2011 and 발행년 > 2000");
-			ResultSet rs = stmt.executeQuery(sb.toString());
-			while(rs.next()) {
-				System.out.println("\t 2000년대 도서가격(2000~2010) : " + rs.getString(1) + "원");
-			}
-		rs.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-			System.out.println("알수없는 에러가 났습니다.");
-		}
-
-		try {
-			Statement stmt = con.createStatement();
-			StringBuffer sb = new StringBuffer();
-			
-			
-			sb.append("select round(avg(가격)) from booklist where 발행년 < 2001 and 발행년 >1990");
-			ResultSet rs = stmt.executeQuery(sb.toString());
-			while(rs.next()) {
-				System.out.println("\t 1990년대 도서가격(1990~2000) : " + rs.getString(1) + "원");
-			}
-			rs.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-			System.out.println("알수없는 에러가 났습니다.");
-		}
-			
-		try {
-			Statement stmt = con.createStatement();
-			StringBuffer sb = new StringBuffer();
-			
-			sb.append("select round(avg(가격)) from booklist where 발행년 < 1991 and 발행년 >1980");
-			ResultSet rs = stmt.executeQuery(sb.toString());
-			while(rs.next()) {
-				System.out.println("\t 1980년대 도서가격(1980~1990) : " + rs.getString(1) + "원");
-			}
-			rs.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-			System.out.println("알수없는 에러가 났습니다.");
-		}
-			
-		try {
-			Statement stmt = con.createStatement();
-			StringBuffer sb = new StringBuffer();
-			
-			sb.append("select round(avg(가격)) from booklist where 발행년 < 1981 and 발행년 >1970");
-			ResultSet rs = stmt.executeQuery(sb.toString());
-			while(rs.next()) {
-				System.out.println("\t 1970년대 도서가격(1970~1980) : " + rs.getString(1) + "원");
-			}rs.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-			System.out.println("알수없는 에러가 났습니다.");
-		}
-		
-		try {
-			Statement stmt = con.createStatement();
-			StringBuffer sb = new StringBuffer();
-			
-			sb.append("select round(avg(가격)) from booklist where 발행년 < 1971");
-			ResultSet rs = stmt.executeQuery(sb.toString());
-			while(rs.next()) {
-				System.out.println("\t 1970년대 이전 도서가격(~1970) : " + rs.getString(1) + "원");
-			}
-			rs.close();
-		}
-		catch (Exception e) {
-			e.printStackTrace();
-			System.out.println("알수없는 에러가 났습니다.");
-		}
-		
-		try {
-			Statement stmt = con.createStatement();
-			StringBuffer sb = new StringBuffer();
-			
-			sb.append("select round(avg(가격)) from booklist");
-			ResultSet rs = stmt.executeQuery(sb.toString());
-			while(rs.next()) {
-				System.out.println("\t 전체 도서 평균가격 : " + rs.getString(1) + "원");
-			}
-			rs.close();
-		}
-		catch (Exception e) {
-			e.printStackTrace();
-			System.out.println("알수없는 에러가 났습니다.");
-		}
 	}
 
 }

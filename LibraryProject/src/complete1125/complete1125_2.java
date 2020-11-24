@@ -1,3 +1,4 @@
+package complete1125;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -14,7 +15,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 
-public class AndongLibraryFixing {
+public class complete1125_2 {
 
 	Connection con;
 	PreparedStatement pstmt1;
@@ -34,7 +35,7 @@ public class AndongLibraryFixing {
 	
 	
 	public static void main(String[] args) {
-		AndongLibraryFixing mpb = new AndongLibraryFixing();
+		complete1125_2 mpb = new complete1125_2();
 		mpb.doRun();
 	}
 	
