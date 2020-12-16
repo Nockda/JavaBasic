@@ -19,8 +19,8 @@ if (dao.confirmId(dto.getId()) == MemberDao.MEMBER_EXISTENT) {
 </script>
 <%
 	} else {
-int ri = dao.insertMember(dto);
-if (ri == MemberDao.MEMBER_JOIN_SUCCESS) {
+	int ri = dao.insertMember(dto);
+	if (ri == MemberDao.MEMBER_JOIN_SUCCESS) {
 	session.setAttribute("id", dto.getId());
 %>
 <script language="javascript">
