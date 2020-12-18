@@ -20,7 +20,12 @@
 		</tr>
 		<tr>
 			<td>내용</td>
-			<td><textarea name="bContent" rows="20"></textarea></td>
+			<td><textarea name="bContent" id="editor1" rows="20" cols="80"></textarea></td>
+			<script src="https://cdn.ckeditor.com/4.15.1/standard/ckeditor.js"></script>
+			<textarea name="editor1"></textarea>
+                <script>
+                        CKEDITOR.replace( 'editor1' );
+                </script>
 		</tr>
 		<tr>
 			<td colspan="2">
