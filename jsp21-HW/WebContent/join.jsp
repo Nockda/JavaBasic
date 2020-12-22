@@ -13,7 +13,7 @@
 		비밀번호 : <input type="password" name="pw" size="20"><br>
 		비밀번호 확인 : <input type="password" name="pw_check" size="20"><br>
 		이름 : <input type="text" name="name" size="20"><br>
-		메일 : <input type="text" name="eMail" size="20"><br>
+		메일 : <input type="email" name="eMail" size="20"><br>
 		주소 : <input type="text" name="address" size="20"><br>
 		<input type="button" value="회원가입" onclick="infoConfirm()">&nbsp;&nbsp;&nbsp;
 		<input type="reset" value="로그인" onclick="javascript:window.location='login.jsp'">

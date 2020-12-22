@@ -153,7 +153,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="GoogleLogin" path="/GoogleLogin" reloadable="true" source="org.eclipse.jst.jee.server:GoogleLogin"/><Context docBase="NaverLogin" path="/NaverLogin" reloadable="true" source="org.eclipse.jst.jee.server:NaverLogin"/><Context docBase="facebookLogin" path="/facebookLogin" reloadable="true" source="org.eclipse.jst.jee.server:facebookLogin"/><Context docBase="kakaoLogin" path="/kakaoLogin" reloadable="true" source="org.eclipse.jst.jee.server:kakaoLogin"/><Context docBase="WebSocketEx" path="/WebSocketEx" reloadable="true" source="org.eclipse.jst.jee.server:WebSocketEx"/><Context docBase="WebProject" path="/WebProject" reloadable="true" source="org.eclipse.jst.jee.server:WebProject"/><Context docBase="BootStrapEx" path="/BootStrapEx" reloadable="true" source="org.eclipse.jst.jee.server:BootStrapEx"/><Context docBase="jsp27-BBS6" path="/jsp27-BBS1" reloadable="true" source="org.eclipse.jst.jee.server:jsp27-BBS6"/></Host>
+      <Context docBase="WebProject" path="/WebProject" reloadable="true" source="org.eclipse.jst.jee.server:WebProject"/></Host>
     </Engine>
   </Service>
 </Server>

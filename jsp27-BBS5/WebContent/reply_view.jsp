@@ -34,7 +34,8 @@
 			<td><textarea rows="10" name="bContent">${reply_view.bContent}</textarea></td>
 		</tr>
 		<tr>
-			<td colspan="2"><input type="submit" value="답변"><a href="list.do">목록</a></td>
+			<td colspan="2"><input type="submit" value="답변">
+			<a href="list.do?page=<%=session.getAttribute("cpage")%>">목록</a></td>
 		</tr>
 		</form>
 	

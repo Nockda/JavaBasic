@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.time.Duration"/>
     <fullyQualifiedTypeName name="java.time.LocalDate"/>
     <fullyQualifiedTypeName name="java.time.ZoneId"/>
     <fullyQualifiedTypeName name="java.time.format.DateTimeFormatter"/>
@@ -44,7 +43,6 @@
     <fullyQualifiedTypeName name="com.study.member.MemberDTO"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="com.study.jsp.MemberDao"/>
-    <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
     <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
     <fullyQualifiedTypeName name="javax.naming.Context"/>
     <fullyQualifiedTypeName name="javax.sql.DataSource"/>
@@ -55,9 +53,11 @@
     <fullyQualifiedTypeName name="com.study.jsp.command.BDeleteCommand"/>
     <fullyQualifiedTypeName name="com.study.jsp.dto.BDto"/>
     <fullyQualifiedTypeName name="com.study.jsp.command.BReplyViewCommand"/>
-    <fullyQualifiedTypeName name="com.study.jsp.dao.BDao"/>
-    <fullyQualifiedTypeName name="com.study.jsp.command.BReplyCommand"/>
     <fullyQualifiedTypeName name="java.util.HashSet"/>
     <fullyQualifiedTypeName name="javax.websocket.Session"/>
     <fullyQualifiedTypeName name="javax.websocket.OnMessage"/>
+    <fullyQualifiedTypeName name="com.study.jsp.BPageInfo"/>
+    <fullyQualifiedTypeName name="com.study.jsp.dao.BDao"/>
+    <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+    <fullyQualifiedTypeName name="com.study.jsp.command.BReplyCommand"/>
 </qualifiedTypeNameHistroy>

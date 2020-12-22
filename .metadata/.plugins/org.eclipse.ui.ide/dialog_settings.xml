@@ -23,6 +23,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\tjoeun-jg-303\Documents\카카오톡 받은 파일\Project-Minji"/>
 			<item value="C:\Users\tjoeun-jg-303\Documents\카카오톡 받은 파일\Jsp27-BBS1-re"/>
 			<item value="D:\Java\01.Basic\Jsp25_2"/>
 			<item value="D:\Java\01.Basic\jsp21-HW"/>
