@@ -68,21 +68,19 @@ display : block; margin:0px auto;}
     </div>
 </nav>
 
-<div class="container-fluid">
-	<div class="col-lg-1"></div>
-	<div class="col-lg-1">
-		<div class="jumbotron" style="padding-top: 20px;">
-			<img src="hellmanager.jpg"/>
-			<h2><%=name %>님 지옥에 어서오세요.</h2>
-			<h4>저는 지옥 매니저입니다.</h4>
-			<form action="logout.jsp" method="post">
-				<p><input type="button" value="홈으로" onclick="javascript:window.location='list.jsp'">
-				<input type="submit" value="로그아웃">
-				<input type="button" value="정보수정" onclick="javascript:window.location='modify.jsp'"></p>
-			</form>
-		</div>	
+<div class="jumbotron" style="padding-top: 20px;">
+	<div class="container-fluid">
+		<img src="hellmanager.jpg"/>
+		<h2><%=name %>님 지옥에 어서오세요.</h2>
+		<h4>저는 지옥 매니저입니다.</h4>
+		<form action="logout.jsp" method="post">
+			<p><input type="button" value="홈으로" onclick="javascript:window.location='list.jsp'">
+			<input type="submit" value="로그아웃">
+			<input type="button" value="정보수정" onclick="javascript:window.location='modify.jsp'"></p>
+		</form>
 	</div>
 </div>
+	
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="js/bootstrap.js"></script>
 </body>

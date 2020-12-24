@@ -49,25 +49,23 @@
 </nav>
 
 
-<div class="container-fluid">
-	<div class="col-lg-1"></div>
-	<div class="col-lg-1">
-		<div class="jumbotron" style="padding-top: 20px;">
-			<form method="post" action="deleteAction.jsp">
-				<h3 style="text-align: center;">회원탈퇴</h3>
-				<h5 style="text-align: center;">회원 탈퇴가 진행 된 이후에는 되돌릴 수 없습니다.</h5>
-				<div class="form-group">
-					<input type="text" class="form-control" placeholder="아이디" name="id" maxlength="20">
-				</div>
-				<div class="form-group">
-					<input type="password" class="form-control" placeholder="비밀번호" name="pw" maxlength="20">
-				</div>
-				<input type="submit" class="btn btn-primary form-control" value="탈퇴">
-				<input type="reset" value="취소"
-				onclick="javascript:window.location='main.jsp'">
-			</form>
-		</div>	
-	</div>
+
+<div class="jumbotron" style="padding-top: 20px;">
+	<div class="container-fluid">
+		<form method="post" action="deleteAction.jsp">
+			<h3 style="text-align: center;">회원탈퇴</h3>
+			<h5 style="text-align: center;">회원 탈퇴가 진행 된 이후에는 되돌릴 수 없습니다.</h5>
+			<div class="form-group">
+				<input type="text" class="form-control" placeholder="아이디" name="id" maxlength="20">
+			</div>
+			<div class="form-group">
+				<input type="password" class="form-control" placeholder="비밀번호" name="pw" maxlength="20">
+			</div>
+			<input type="submit" class="btn btn-primary form-control" value="탈퇴">
+			<input type="reset" value="취소"
+			onclick="javascript:window.location='main.jsp'">
+		</form>
+	</div>	
 </div>
 
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>

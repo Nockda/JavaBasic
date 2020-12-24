@@ -65,20 +65,18 @@ MemberDTO dto = dao.getMember(id);
 </nav>
 
 
-<div class="container">
-	<div class="col-lg-1"></div>
-	<div class="col-lg-1">
-		<div class="jumbotron" style="padding-top: 20px;">
-			<h1>관리자 화면에 오신 것을 환영합니다.</h1>
-			<a href="mgrAdd.jsp">관리자 등록</a>
-			<a href="mgrInquireMem.jsp">전체 회원 조회</a>
-			<a href="mgrSearchMem.jsp">회원 검색</a>
-			<a href="mgrStopLogin.jsp">회원 로그인 정지</a>
-			<a href="mgrBanMem.jsp">회원 강제 탈퇴</a>
-			<a href="mgrStat.jsp">회원 정보 그래프</a>
-		</div>	
-	</div>
+<div class="jumbotron" style="padding-top: 20px;">
+	<div class="container">
+		<h1>관리자 화면에 오신 것을 환영합니다.</h1>
+		<a href="mgrAdd.jsp">관리자 등록</a>
+		<a href="mgrInquireMem.jsp">전체 회원 조회</a>
+		<a href="mgrSearchMem.jsp">회원 검색</a>
+		<a href="mgrStopLogin.jsp">회원 로그인 정지</a>
+		<a href="mgrBanMem.jsp">회원 강제 탈퇴</a>
+		<a href="mgrStat.jsp">회원 정보 그래프</a>
+	</div>	
 </div>
+
 
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="js/bootstrap.js"></script>

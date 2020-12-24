@@ -50,9 +50,9 @@ text-align:center;}
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="logout.jsp">Logout</a></li>
           </ul>
+		</li>
         <li class="nav-item">
           <a class="nav-link" href="mgrMain.jsp">Hell Manager</a>
-        </li>
         </li>
       </ul>
       <form class="d-flex">
@@ -60,13 +60,11 @@ text-align:center;}
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
     </div>
-    </div>
+</div>
 </nav>
 
-<div class="container-fluid">
-	<div class="col-lg-1"></div>
-	<div class="col-lg-1">
-		<div class="jumbotron" style="padding-top: 20px;">
+<div class="jumbotron" style="padding-top: 20px;">
+	<div class="container-fluid">
 			<h1 id="head"><strong>Welcome to the Hell</strong></h1><br><br>
 			<h4 id="desc">Html, CSS, JSP, BBS 때문에 골머리를 앓고 계신다고요?</h4>
 			<h4 id="desc">하고싶은건 많은데 어떻게 해야 할지 모르신다구요?</h4>
@@ -75,7 +73,6 @@ text-align:center;}
 			<img src="letsgo.png" alt="Let's go to the hell!"></img><br><hr>
 			<p><input type="button" value="회원가입" onclick="javascript:window.location='join.jsp'">
 			<input type="submit" value="로그인" onclick="javascript:window.location='Login.jsp'">&nbsp;&nbsp;&nbsp;</p>
-		</div>	
 	</div>
 </div>
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>

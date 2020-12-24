@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.time.LocalDate"/>
-    <fullyQualifiedTypeName name="java.time.ZoneId"/>
     <fullyQualifiedTypeName name="java.time.format.DateTimeFormatter"/>
     <fullyQualifiedTypeName name="java.util.concurrent.Future"/>
     <fullyQualifiedTypeName name="java.util.concurrent.Callable"/>
@@ -60,4 +58,6 @@
     <fullyQualifiedTypeName name="com.study.jsp.dao.BDao"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
     <fullyQualifiedTypeName name="com.study.jsp.command.BReplyCommand"/>
+    <fullyQualifiedTypeName name="com.study.jsp.command.BMemberCommand"/>
+    <fullyQualifiedTypeName name="com.study.jsp.command.BSearchMemCommand"/>
 </qualifiedTypeNameHistroy>

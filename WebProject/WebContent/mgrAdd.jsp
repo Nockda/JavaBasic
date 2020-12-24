@@ -63,14 +63,11 @@ MemberDTO dto = dao.getMember(id);
 </nav>
 
 
-<div class="container">
-	<div class="col-lg-1"></div>
-	<div class="col-lg-1">
-		<div class="jumbotron" style="padding-top: 20px;">
-			<h1>관리자 화면에 오신 것을 환영합니다.</h1>
-			<a href="addMgr.jsp">관리자 등록</a>
-		</div>	
-	</div>
+<div class="jumbotron" style="padding-top: 20px;">
+	<div class="container">
+		<h1>관리자 화면에 오신 것을 환영합니다.</h1>
+		<a href="addMgr.jsp">관리자 등록</a>
+	</div>	
 </div>
 
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>

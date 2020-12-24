@@ -36,25 +36,48 @@ MemberDTO dto = dao.getMember(id);
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="main.jsp">Welcome to the hell</a>
         </li>
+        <!--  -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Hell talk
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+         	<li><a class="dropdown-item" href="#">공지사항</a></li>
+            <li><a class="dropdown-item" href="list.jsp">질문게시판</a></li>
+          </ul>
         <li class="nav-item">
-          <a class="nav-link" href="list.jsp">Hell talk</a>
-        </li>
+        <!--  -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Hell's Member Desk
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+        </a>
+        <!--  -->
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
          	<li><a class="dropdown-item" href="join.jsp">Registration</a></li>
          	<li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="Login.jsp">Login</a></li>
             <li><a class="dropdown-item" href="modify.jsp">Modify</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="logout.jsp">Logout</a></li>
-          </ul>
-        <li class="nav-item">
-          <a class="nav-link" href="mgrMain.jsp">Hell Manager</a>
+        </ul>
         </li>
+        <!--  -->
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Hell Manager
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+         	<li><a class="dropdown-item" href="mgrAdd.jsp">관리자 등록</a></li>
+         	<li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="mgrInquireMem.jsp">전체회원조회</a></li>
+            <li><a class="dropdown-item" href="mgrSearchMem.jsp">회원검색</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="mgrStopLogin.jsp">회원로그인정지</a></li>
+            <li><a class="dropdown-item" href="mgrBanMem.jsp">회원강제탈퇴</a></li>
+            <li><a class="dropdown-item" href="mgrStat.jsp">회원정보그래프</a></li>
+        </ul>
         </li>
+        <!--  -->
       </ul>
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -64,39 +87,36 @@ MemberDTO dto = dao.getMember(id);
     </div>
 </nav>
 
-<div class="container">
-<div class="col-lg-1"></div>
-	<div class="col-lg-1">
-		<div class="jumbotron" style="padding-top: 20px;">
-			<form method="post" action="modifyOk.jsp" name="reg_frm">
-				<h3 style="text-align: center;">회원정보 수정</h3>
-				<div class="form-group">
-				아이디 : <%=dto.getId()%>
-				</div>
-				<div class="form-group">
-					비밀번호 : <input type="password" class="form-control"
-												placeholder="비밀번호(최대 길이 20)" name="pw" maxlength="20">
-				</div>
-				<div class="form-group">
-					<input type="password" class="form-control"
-												placeholder="비밀번호 확인(비밀번호와 동일)" name="pw_check"
-												maxlength="20">
-				</div>
-				<div class="form-group">
-					이름 : <%=dto.getName()%>
-				</div>
-				<div class="form-group">
-					메일 : <input type="email" class="form-control" placeholder="<%=dto.geteMail()%>"
-												name="eMail" maxlength="20">
-				</div>
-				<div class="form-group">
-					주소 : <input type="text" class="form-control" placeholder="<%=dto.getAddress()%>"
-												name="address" maxlength="50">
-				</div>
-			<input type="button" value="수정" onclick="updateInfoConfirm()">
-			<input type="reset" value="취소" onclick="javascript:window.location='main.jsp'">
-			</form>
-		</div>
+<div class="jumbotron" style="padding-top: 20px;">
+	<div class="container">
+		<form method="post" action="modifyOk.jsp" name="reg_frm">
+			<h3 style="text-align: center;">회원정보 수정</h3>
+			<div class="form-group">
+			아이디 : <%=dto.getId()%>
+			</div>
+			<div class="form-group">
+				비밀번호 : <input type="password" class="form-control"
+											placeholder="비밀번호(최대 길이 20)" name="pw" maxlength="20">
+			</div>
+			<div class="form-group">
+				<input type="password" class="form-control"
+											placeholder="비밀번호 확인(비밀번호와 동일)" name="pw_check"
+											maxlength="20">
+			</div>
+			<div class="form-group">
+				이름 : <%=dto.getName()%>
+			</div>
+			<div class="form-group">
+				메일 : <input type="email" class="form-control" placeholder="<%=dto.geteMail()%>"
+											name="eMail" maxlength="20">
+			</div>
+			<div class="form-group">
+				주소 : <input type="text" class="form-control" placeholder="<%=dto.getAddress()%>"
+											name="address" maxlength="50">
+			</div>
+		<input type="button" value="수정" onclick="updateInfoConfirm()">
+		<input type="reset" value="취소" onclick="javascript:window.location='main.jsp'">
+		</form>
 	</div>
 </div>
 
