@@ -13,8 +13,8 @@ public class BDto {
 	int bGroup;
 	int bStep;
 	int bIndent;
-
-	public BDto(String mId, String mPw, String mName, String meMail, Timestamp mrDate, String mAddress, String mMgr) {
+	
+	public BDto() {
 		
 	}
 	

@@ -1,10 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="com.study.member.*"%>
-<%
-String id = (String) session.getAttribute("id");
-MemberDao dao = MemberDao.getInstance();
-MemberDTO dto = dao.getMember(id);
-%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -55,23 +50,27 @@ MemberDTO dto = dao.getMember(id);
     </div>
 </nav>
 
-<form action="write.do" method = "post" enctype="multipart/form-data">
-  <div class="form-group">
-    <label for="exampleFormControlInput1">이름</label>
-    <input type="text" class="form-control" id="bName" placeholder="이름을 쓰세요">
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlInput1">제목</label>
-    <input type="text" class="form-control" id="bTitle" placeholder="제목">
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlTextarea1">내용</label>
-    <textarea class="form-control" id="bContent" rows="10"></textarea>
-  </div>
-  	<input type="submit" value="입력">&nbsp;&nbsp;
-	<a href="list.do">목록보기</a>
-</form>
-	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-	<script src="js/bootstrap.js"></script>
+<table width="500" cellpadding="0" cellspacing="0" border="1">
+	<form action="write.do" method = "post">
+		<tr>
+			<td>이름</td>
+			<td><input type="text" name="bName" size="50"></td>
+		</tr>
+		<tr>
+			<td>제목</td>
+			<td><input type="text" name="bTitle" size="50"></td>
+		</tr>
+		<tr>
+			<td>내용</td>
+			<td><textarea name="bContent" rows="20"></textarea></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<input type="submit" value="입력">&nbsp;&nbsp;
+				<a href="list.do">목록보기</a>
+			</td>
+		</tr>
+	</form>
+</table>
 </body>
 </html>
