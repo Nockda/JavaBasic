@@ -126,6 +126,9 @@ font-family:nd
 		<input type="button" value="수정" onclick="updateInfoConfirm()">
 		<input type="reset" value="취소" onclick="javascript:window.location='main.jsp'">
 		</form>
+		<br>
+		<hr>
+		<a href="delete.jsp">회원탈퇴</a>
 	</div>
 </div>
 

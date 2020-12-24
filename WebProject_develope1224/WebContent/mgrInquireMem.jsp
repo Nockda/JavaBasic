@@ -117,7 +117,7 @@ h1 {
 					<tbody>
 					<c:forEach items="${member_view}" var = "dto">
 						<tr>
-							<th scope="row">1</th>
+							<th scope="row">-</th>
 							<td>${dto.id}</td>
 							<td>${dto.pw}</td>
 							<td>${dto.name}</td>

@@ -85,11 +85,19 @@ MemberDTO dto = dao.getMember(id);
     </div>
 </nav>
 
+
 <div class="jumbotron" style="padding-top: 20px;">
 	<div class="container">
-		<h1>관리자 화면에 오신 것을 환영합니다.</h1>
-		<a href="addMgr.jsp">관리자 등록</a>
-	</div>	
+		<form method="post" action="addOk.jsp" name="reg_frm">
+			<h3 style="text-align: center;">매니저 추가 화면</h3>
+			<div class="form-group">
+			추가 할 아이디 : <input type="password" class="form-control"
+											placeholder="비밀번호(최대 길이 20)" name="pw" maxlength="20">
+			</div>
+		<input type="button" value="수정" onclick="updateInfoConfirm()">
+		<input type="reset" value="취소" onclick="javascript:window.location='main.jsp'">
+		</form>
+	</div>
 </div>
 
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>

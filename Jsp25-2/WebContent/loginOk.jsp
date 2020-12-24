@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language=com.study.njsp.MemberDtot/html; charset=UTF-8"
+com.study.njsp.MemberDao"%>
 <!DOCTYPE html>
 <html>
 <head>

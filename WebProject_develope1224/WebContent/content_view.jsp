@@ -23,6 +23,23 @@ font-size:35px;
 nav{
 font-family:nd
 }
+td{
+width:200px;
+}
+th{
+width: 10px;
+}
+#content{
+width:90%;
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: 5px;
+	margin-left: 5px;
+	margin-top:10px;
+	}
+#cont{
+height:300px;
+}
 </style>
 </head>
 <body>
@@ -88,27 +105,35 @@ font-family:nd
     </div>
 </nav>
 
-
-	<table width="500" cellpadding="0" cellspacing="0" border="1">
+<div class="container-fluid" id="content">
+	<table class="table table-bordered">
+	<thead>
 	<tr>
-		<td>번호</td>
+	<th colspan="2" style="font-size:20px;">&nbsp;&nbsp;&nbsp;<strong>자유게시판</strong></th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<th>번호</th>
 		<td>${content_view.bId}</td>
 	</tr>
 	<tr>
-		<td>히트</td>
+		<th>히트</th>
 		<td>${content_view.bHit}</td>
 	</tr>
 	<tr>
-		<td>이름</td>
+		<th>이름</th>
 		<td>${content_view.bName}</td>
 	</tr>
 	<tr>
-		<td>제목</td>
+		<th>제목</th>
 		<td>${content_view.bTitle}</td>
 	</tr>
 	<tr>
-		<td>내용</td>
-		<td>${content_view.bContent}</td>
+		<th colspan="2">내용</th>
+	</tr>
+	<tr>
+		<td colspan="2" id="cont">${content_view.bContent}</td>
 	</tr>
 	<tr>
 		<td colspan="2">
@@ -118,9 +143,11 @@ font-family:nd
 		<a href="reply_view.do?bId=${content_view.bId}">답변</a>&nbsp;&nbsp;
 		</td>
 	</tr>
+	</tbody>
 	</table>
 
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="js/bootstrap.js"></script>
+</div>
 </body>
 </html>

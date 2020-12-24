@@ -10,6 +10,16 @@
 <link rel="stylesheet" href="css/bootstrap.css">
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+.container{
+	padding-right: 15px;
+	padding-left: 20px;
+	margin-right: 5px;
+	margin-left: 5px;
+	margin-top:10px;
+}
+
+</style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -74,8 +84,10 @@
     </div>
 </nav>
 
+<div class="container">
 <table class = "table table-striped">
 	<thead>
+	<tr style="font-size:25px;"><td colspan="5">자유게시판</td></tr>
 	<tr>
 		<td>번호</td>
 		<td>이름</td>
@@ -151,6 +163,7 @@
 		</td>
 		</tr>
 </table>
+</div>
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="js/bootstrap.js"></script>
 </body>

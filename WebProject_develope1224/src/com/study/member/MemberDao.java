@@ -339,6 +339,34 @@ public class MemberDao{
 
 		return dtos;
 	}
+	
+	public int updateMgr(String id) {
+		int ri = 0;
+		Connection con =null;
+		PreparedStatement pstmt = null;
+		String query="insert mgrmembers values (?)";
+		MemberDTO dto;
+		
+		try {
+			con=getConnection();
+			pstmt=con.prepareStatement(query);
+			pstmt.setString(1, dto.getPw());
+			pstmt.setString(2, dto.geteMail());
+			pstmt.setString(3, dto.getAddress());
+			pstmt.setString(4, dto.getId());
+			ri=pstmt.executeUpdate();
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				pstmt.close();
+				con.close();
+			}catch(Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		return ri;
+	}
 
 	private Connection getConnection() {
 		
